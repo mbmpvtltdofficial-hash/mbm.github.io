@@ -2,360 +2,899 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Modern Borka Museum | Premium Burqa & Abaya</title>
-    <meta name="description" content="India's finest Burqa Museum - Premium Abaya, Turkish Burqa, Hyderabadi Collection. Offline & Online Shopping.">
-    <meta name="keywords" content="burqa, abaya, hijab, muslim fashion, burqa museum, modern burka, modest wear">
-    <meta name="author" content="Modern Borka Museum">
-    <meta property="og:title" content="Modern Borka Museum - Premium Burqa Abaya">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://modernborkamuseum.github.io">
-    <meta property="og:image" content="images/logo.png">
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Borka Museum - Flipkart Style Premium Burqa Store</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f3f6;
+            color: #212121;
+        }
+
+        /* ========== FLIPKART STYLE NAVBAR ========== */
+        .navbar {
+            background: #2874f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            font-size: 0.7rem;
+            color: #ffe500;
+            margin-top: -5px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: white;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            color: #2874f0;
+            font-size: 18px;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-icon {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .nav-icon i {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            background: #ffe500;
+            color: #2874f0;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        /* ========== CATEGORY BAR ========== */
+        .category-bar {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 12px 0;
+        }
+
+        .category-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-item img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        .category-item span {
+            display: block;
+            font-size: 12px;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        /* ========== BANNER SLIDER ========== */
+        .banner-slider {
+            max-width: 1400px;
+            margin: 16px auto;
+            padding: 0 20px;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            color: white;
+        }
+
+        .banner h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .banner .btn-shop {
+            background: #ffe500;
+            color: #2874f0;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* ========== PRODUCT SECTION (FLIPKART STYLE) ========== */
+        .products-section {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-header a {
+            color: #2874f0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+            background: #f1f3f6;
+            padding: 16px 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 12px;
+        }
+
+        .product-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212121;
+        }
+
+        .product-original {
+            font-size: 13px;
+            color: #878787;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+
+        .product-discount {
+            color: #388e3c;
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .rating-badge {
+            background: #388e3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .wishlist-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .wishlist-icon i {
+            color: #878787;
+            font-size: 18px;
+        }
+
+        .wishlist-icon.active i {
+            color: #ff3e6c;
+        }
+
+        /* ========== MODAL / PRODUCT DETAILS (FLIPKART STYLE) ========== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .product-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .detail-images {
+            position: relative;
+        }
+
+        .main-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .thumbnail-grid {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .detail-info h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .detail-price {
+            font-size: 28px;
+            font-weight: 600;
+            color: #212121;
+        }
+
+        .detail-original {
+            font-size: 16px;
+            color: #878787;
+            text-decoration: line-through;
+        }
+
+        .detail-discount {
+            color: #388e3c;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .size-chart {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f7f7f7;
+            border-radius: 8px;
+        }
+
+        .size-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .size-btn {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .size-btn.selected {
+            border-color: #2874f0;
+            background: #e8f0fe;
+            color: #2874f0;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .color-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-circle.selected {
+            border-color: #2874f0;
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #2874f0;
+        }
+
+        .offer-box {
+            background: #fff7e6;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-buy {
+            flex: 1;
+            background: #ff9f00;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-cart {
+            flex: 1;
+            background: #2874f0;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ========== CART SIDEBAR ========== */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 450px;
+            height: 100vh;
+            background: white;
+            z-index: 2001;
+            transition: right 0.3s;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cart-item-price {
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .cart-item-quantity button {
+            width: 28px;
+            height: 28px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #2874f0;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* ========== CHECKOUT MODAL (PAYMENT) ========== */
+        .checkout-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .checkout-modal.show {
+            display: flex;
+        }
+
+        .checkout-container {
+            background: white;
+            width: 500px;
+            max-width: 90%;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .payment-methods {
+            margin: 20px 0;
+        }
+
+        .payment-option {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .payment-option.selected {
+            border-color: #2874f0;
+            background: #e8f0fe;
+        }
+
+        .upi-id {
+            background: #f1f3f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+            background: #ddd;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #172337;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .footer h3 {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a {
+            color: #aaa;
+            font-size: 12px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            .search-bar {
+                width: 100%;
+                max-width: none;
+            }
+            .product-detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 📱 Mobile Menu Toggle -->
-    <div class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-    </div>
-
-    <!-- 🎯 Navigation Bar -->
-    <nav class="navbar" id="navbar">
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <h1>🕌 Modern Borka <span>Museum</span></h1>
-                <p>Est. 2024 | Heritage & Elegance</p>
+                <h1>Modern Borka <span>Museum</span></h1>
             </div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#products">Products</a>
-                <a href="#museum">Museum</a>
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact</a>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for burqa, abaya, brand, color...">
+                <button><i class="fas fa-search"></i></button>
             </div>
             <div class="nav-icons">
-                <i class="fas fa-search" id="searchIcon"></i>
-                <i class="fas fa-shopping-cart" id="cartIcon">
+                <a href="#" class="nav-icon" id="wishlistIcon">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="#" class="nav-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
                     <span class="cart-count" id="cartCount">0</span>
-                </i>
-                <i class="fas fa-user" id="userIcon"></i>
+                </a>
+                <a href="#" class="nav-icon">
+                    <i class="far fa-user"></i>
+                    <span>Account</span>
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- 🔍 Search Bar (Hidden by default) -->
-    <div class="search-bar" id="searchBar">
-        <input type="text" id="searchInput" placeholder="Search for burqa, abaya, color, fabric...">
-        <button id="closeSearch"><i class="fas fa-times"></i></button>
+    <!-- ========== CATEGORY BAR ========== -->
+    <div class="category-bar">
+        <div class="category-container">
+            <div class="category-item" data-category="all">
+                <img src="https://img.icons8.com/fluency/96/all.png" alt="All">
+                <span>All</span>
+            </div>
+            <div class="category-item" data-category="premium">
+                <img src="https://img.icons8.com/fluency/96/diamond.png" alt="Premium">
+                <span>Premium</span>
+            </div>
+            <div class="category-item" data-category="turkish">
+                <img src="https://img.icons8.com/color/96/turkey.png" alt="Turkish">
+                <span>Turkish</span>
+            </div>
+            <div class="category-item" data-category="hyderabadi">
+                <img src="https://img.icons8.com/color/96/hyderabad.png" alt="Hyderabadi">
+                <span>Hyderabadi</span>
+            </div>
+            <div class="category-item" data-category="indonesian">
+                <img src="https://img.icons8.com/color/96/indonesia.png" alt="Indonesian">
+                <span>Indonesian</span>
+            </div>
+        </div>
     </div>
 
-    <!-- 🛒 Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
+    <!-- ========== BANNER ========== -->
+    <div class="banner-slider">
+        <div class="banner">
+            <div>
+                <h2>Eid Special Collection</h2>
+                <p>Up to 60% off on premium burqas & abayas</p>
+                <a href="#" class="btn-shop">Shop Now →</a>
+            </div>
+            <div>
+                <i class="fas fa-mosque" style="font-size: 100px; opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PRODUCTS SECTION ========== -->
+    <div class="products-section">
+        <div class="section-header">
+            <h2>🔥 Bestsellers for You</h2>
+            <a href="#">View All →</a>
+        </div>
+        <div class="product-grid" id="productGrid">
+            <!-- Products loaded via JS -->
+        </div>
+    </div>
+
+    <!-- ========== PRODUCT DETAIL MODAL ========== -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="productDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div id="cartSidebar" class="cart-sidebar">
         <div class="cart-header">
-            <h3>Your Cart <i class="fas fa-shopping-bag"></i></h3>
-            <i class="fas fa-times" id="closeCart"></i>
+            <h3>My Cart <i class="fas fa-shopping-bag"></i></h3>
+            <i class="fas fa-times" id="closeCart" style="cursor: pointer;"></i>
         </div>
         <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
+            <p style="text-align: center; color: #999;">Your cart is empty</p>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <span>Total:</span>
+                <span>Total Amount</span>
                 <span id="cartTotal">₹0</span>
             </div>
-            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout <i class="fab fa-whatsapp"></i></button>
+            <button class="checkout-btn" id="proceedCheckout">Proceed to Checkout</button>
         </div>
     </div>
 
-    <!-- 🌟 Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>A Museum of Heritage. <span>A Store of Elegance.</span></h1>
-            <p>Discover India's finest collection of Burqas & Abayas — where every piece tells a story.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
-                <a href="#museum" class="btn-secondary">Explore Museum <i class="fas fa-landmark"></i></a>
-            </div>
-            <div class="hero-stats">
-                <div><span>500+</span><p>Happy Customers</p></div>
-                <div><span>100+</span><p>Exclusive Designs</p></div>
-                <div><span>4.9⭐</span><p>Customer Rating</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🏷️ Features Section -->
-    <section class="features">
-        <div class="feature-card">
-            <i class="fas fa-truck-fast"></i>
-            <h3>Free Shipping</h3>
-            <p>On orders over ₹2999</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-exchange-alt"></i>
-            <h3>Easy Returns</h3>
-            <p>7 days return policy</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-hand-holding-heart"></i>
-            <h3>Quality Guarantee</h3>
-            <p>Premium fabrics only</p>
-        </div>
-        <div class="feature-card">
-            <i class="fab fa-whatsapp"></i>
-            <h3>24/7 Support</h3>
-            <p>Order via WhatsApp</p>
-        </div>
-    </section>
-
-    <!-- 📊 Filters Section -->
-    <section class="filters-section" id="filters">
-        <div class="filter-container">
-            <div class="filter-group">
-                <label>Category</label>
-                <select id="categoryFilter">
-                    <option value="all">All</option>
-                    <option value="premium">Premium Collection</option>
-                    <option value="turkish">Turkish Burqa</option>
-                    <option value="hyderabadi">Hyderabadi Abaya</option>
-                    <option value="indonesian">Indonesian Linen</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Price Range</label>
-                <select id="priceFilter">
-                    <option value="all">All</option>
-                    <option value="0-1500">Under ₹1500</option>
-                    <option value="1500-3000">₹1500 - ₹3000</option>
-                    <option value="3000-5000">₹3000 - ₹5000</option>
-                    <option value="5000+">Above ₹5000</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Color</label>
-                <select id="colorFilter">
-                    <option value="all">All</option>
-                    <option value="Black">Black</option>
-                    <option value="Navy Blue">Navy Blue</option>
-                    <option value="Coffee Brown">Coffee Brown</option>
-                    <option value="Army Green">Army Green</option>
-                    <option value="Beige">Beige</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Sort By</label>
-                <select id="sortFilter">
-                    <option value="default">Default</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="name">Name A-Z</option>
-                </select>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🛍️ Products Section -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>✨ Our Premium Collection</h2>
-                <p>Handpicked designs from around the world</p>
-            </div>
-            <div class="product-grid" id="productGrid">
-                <!-- Products will be loaded here dynamically from products.json -->
-                <div class="loading">Loading beautiful products... 🕌</div>
-            </div>
-            <div class="load-more-container">
-                <button id="loadMoreBtn" class="load-more-btn">Load More <i class="fas fa-arrow-down"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 🏛️ Museum Gallery Section -->
-    <section id="museum" class="museum-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>🏛️ Burqa Museum Gallery</h2>
-                <p>Step into our heritage — witness the evolution of modest fashion</p>
-            </div>
-            <div class="museum-grid">
-                <div class="museum-card">
-                    <img src="https://via.placeholder.com/400x300?text=Vintage+Collection" alt="Vintage Burqa">
-                    <div class="museum-info">
-                        <h3>Vintage Collection (1950s)</h3>
-                        <p>Traditional hand-embroidered pieces</p>
-                    </div>
+    <!-- ========== CHECKOUT / PAYMENT MODAL ========== -->
+    <div id="checkoutModal" class="checkout-modal">
+        <div class="checkout-container">
+            <h3>Complete Your Payment</h3>
+            <div class="payment-methods">
+                <div class="payment-option selected" data-method="upi">
+                    <i class="fas fa-mobile-alt" style="font-size: 24px;"></i>
+                    <span>UPI / Google Pay / PhonePe</span>
                 </div>
-                <div class="museum-card">
-                    <img src="https://via.placeholder.com/400x300?text=Turkish+Heritage" alt="Turkish Heritage">
-                    <div class="museum-info">
-                        <h3>Turkish Heritage</h3>
-                        <p>Ottoman inspired designs</p>
-                    </div>
+                <div class="payment-option" data-method="card">
+                    <i class="far fa-credit-card" style="font-size: 24px;"></i>
+                    <span>Credit / Debit Card</span>
                 </div>
-                <div class="museum-card">
-                    <img src="https://via.placeholder.com/400x300?text=Hyderabadi+Nizam" alt="Hyderabadi">
-                    <div class="museum-info">
-                        <h3>Hyderabadi Nizam</h3>
-                        <p>Royal Abaya collection</p>
-                    </div>
+                <div class="payment-option" data-method="cod">
+                    <i class="fas fa-money-bill-wave" style="font-size: 24px;"></i>
+                    <span>Cash on Delivery</span>
                 </div>
-                <div class="museum-card">
-                    <img src="https://via.placeholder.com/400x300?text=Modern+Art" alt="Modern Art">
-                    <div class="museum-info">
-                        <h3>Modern Art Series</h3>
-                        <p>Contemporary minimalist designs</p>
+            </div>
+            <div id="paymentDetails">
+                <div class="upi-id">
+                    <p><strong>UPI ID:</strong> modernborkamuseum@oksbi</p>
+                    <p>Scan QR code or pay to this UPI ID</p>
+                    <div class="qr-code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=modernborkamuseum@oksbi" alt="UPI QR Code">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ℹ️ About Us Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>About Modern Borka Museum</h2>
-                    <p>Founded in 2024, Modern Borka Museum is India's first hybrid concept store — combining a <strong>physical museum of burqa heritage</strong> with an <strong>online premium garment store</strong>.</p>
-                    <p>We believe modesty is not a limitation, it's an expression. Each burqa in our collection tells a story — from the royal courts of Hyderabad to the artisan workshops of Istanbul.</p>
-                    <div class="about-features">
-                        <div><i class="fas fa-check-circle"></i> 100+ Exclusive Designs</div>
-                        <div><i class="fas fa-check-circle"></i> Premium Fabrics (Crepe, Linen, Georgette)</div>
-                        <div><i class="fas fa-check-circle"></i> Custom Sizing Available</div>
-                        <div><i class="fas fa-check-circle"></i> Pan India Shipping</div>
-                    </div>
-                    <a href="#contact" class="btn-primary">Visit Our Offline Museum</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://via.placeholder.com/500x400?text=Our+Store" alt="Our Store">
-                </div>
+            <div class="cart-total" style="margin: 15px 0;">
+                <span>Total Payable</span>
+                <span id="checkoutTotal">₹0</span>
             </div>
-        </div>
-    </section>
-
-    <!-- 📞 Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>📞 Get in Touch</h2>
-                <p>Visit our store or connect with us online</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Visit Our Store</h3>
-                        <p>[Your Full Store Address Here]<br>City, State - Pin Code</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-phone-alt"></i>
-                        <h3>Call Us</h3>
-                        <p>+91 7047158214</p>
-                        <p>10 AM - 8 PM (Fri closed)</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fab fa-whatsapp"></i>
-                        <h3>WhatsApp</h3>
-                        <p>+91 7047158214</p>
-                        <p>Order & Inquiry</p>
-                    </div>
-                    <div class="contact-card">
-                        <i class="fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>mbm.pvt.ltd.official@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Phone Number">
-                        <textarea rows="4" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 📱 Floating WhatsApp Button -->
-    <a href="https://wa.me/917047158214" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span>Chat with us!</span>
-    </a>
-
-    <!-- 🔼 Scroll to Top Button -->
-    <button id="scrollTop" class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- 📧 Newsletter Popup (Shows after 10 seconds) -->
-    <div id="newsletterPopup" class="newsletter-popup">
-        <div class="popup-content">
-            <i class="fas fa-times close-popup" id="closePopup"></i>
-            <i class="fas fa-gift popup-icon"></i>
-            <h3>Get 10% OFF!</h3>
-            <p>Subscribe to get exclusive offers & new collection updates</p>
-            <form id="newsletterForm">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <small>No spam, unsubscribe anytime</small>
+            <button id="confirmPaymentBtn" class="btn-buy" style="width: 100%;">Confirm Order</button>
+            <button id="closeCheckout" style="width: 100%; margin-top: 10px; background: #f0f0f0; border: none; padding: 12px; border-radius: 5px; cursor: pointer;">Cancel</button>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- ========== TOAST NOTIFICATION ========== -->
+    <div id="toast" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #388e3c; color: white; padding: 10px 20px; border-radius: 5px; display: none; z-index: 3000;"></div>
+
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>🕌 Modern Borka Museum</h3>
-                    <p>India's first hybrid concept store combining a museum of burqa heritage with premium modest fashion.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#museum">Museum</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h3>Policies</h3>
-                    <ul>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Return & Exchange</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-newsletter">
-                    <h3>Stay Updated</h3>
-                    <p>Get latest offers & new arrivals</p>
-                    <form id="footerNewsletter">
-                        <input type="email" placeholder="Your email">
-                        <button><i class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
+        <div class="footer-container">
+            <div>
+                <h3>MODERN BORKA MUSEUM</h3>
+                <p>India's first hybrid concept store</p>
+                <p>Burqa Museum + Premium Garments</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Modern Borka Museum. All rights reserved. | Designed with <i class="fas fa-heart"></i> for modest fashion</p>
-                <p>📍 Offline Store: [Your Complete Address] | 📞 +91 7047158214</p>
+            <div>
+                <h3>POLICIES</h3>
+                <a href="#">Return Policy</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div>
+                <h3>CONTACT US</h3>
+                <p>📞 +91 7047158214</p>
+                <p>📧 mbm.pvt.ltd.official@gmail.com</p>
+                <p>📍 Your Store Address, India</p>
+            </div>
+            <div>
+                <h3>FOLLOW US</h3>
+                <p><i class="fab fa-instagram"></i> Instagram</p>
+                <p><i class="fab fa-facebook"></i> Facebook</p>
+                <p><i class="fab fa-youtube"></i> YouTube</p>
             </div>
         </div>
     </footer>
