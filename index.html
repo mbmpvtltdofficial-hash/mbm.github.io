@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Modern Borka Museum | Premium Burqa & Abaya</title>
+    <meta name="description" content="India's finest Burqa Museum - Premium Abaya, Turkish Burqa, Hyderabadi Collection. Offline & Online Shopping.">
+    <meta name="keywords" content="burqa, abaya, hijab, muslim fashion, burqa museum, modern burka, modest wear">
+    <meta name="author" content="Modern Borka Museum">
+    <meta property="og:title" content="Modern Borka Museum - Premium Burqa Abaya">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://modernborkamuseum.github.io">
+    <meta property="og:image" content="images/logo.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 📱 Mobile Menu Toggle -->
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- 🎯 Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>🕌 Modern Borka <span>Museum</span></h1>
+                <p>Est. 2024 | Heritage & Elegance</p>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#products">Products</a>
+                <a href="#museum">Museum</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <i class="fas fa-search" id="searchIcon"></i>
+                <i class="fas fa-shopping-cart" id="cartIcon">
+                    <span class="cart-count" id="cartCount">0</span>
+                </i>
+                <i class="fas fa-user" id="userIcon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔍 Search Bar (Hidden by default) -->
+    <div class="search-bar" id="searchBar">
+        <input type="text" id="searchInput" placeholder="Search for burqa, abaya, color, fabric...">
+        <button id="closeSearch"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- 🛒 Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart <i class="fas fa-shopping-bag"></i></h3>
+            <i class="fas fa-times" id="closeCart"></i>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout <i class="fab fa-whatsapp"></i></button>
+        </div>
+    </div>
+
+    <!-- 🌟 Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>A Museum of Heritage. <span>A Store of Elegance.</span></h1>
+            <p>Discover India's finest collection of Burqas & Abayas — where every piece tells a story.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary">Shop Now <i class="fas fa-arrow-right"></i></a>
+                <a href="#museum" class="btn-secondary">Explore Museum <i class="fas fa-landmark"></i></a>
+            </div>
+            <div class="hero-stats">
+                <div><span>500+</span><p>Happy Customers</p></div>
+                <div><span>100+</span><p>Exclusive Designs</p></div>
+                <div><span>4.9⭐</span><p>Customer Rating</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏷️ Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <i class="fas fa-truck-fast"></i>
+            <h3>Free Shipping</h3>
+            <p>On orders over ₹2999</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Easy Returns</h3>
+            <p>7 days return policy</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Quality Guarantee</h3>
+            <p>Premium fabrics only</p>
+        </div>
+        <div class="feature-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>24/7 Support</h3>
+            <p>Order via WhatsApp</p>
+        </div>
+    </section>
+
+    <!-- 📊 Filters Section -->
+    <section class="filters-section" id="filters">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label>Category</label>
+                <select id="categoryFilter">
+                    <option value="all">All</option>
+                    <option value="premium">Premium Collection</option>
+                    <option value="turkish">Turkish Burqa</option>
+                    <option value="hyderabadi">Hyderabadi Abaya</option>
+                    <option value="indonesian">Indonesian Linen</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Price Range</label>
+                <select id="priceFilter">
+                    <option value="all">All</option>
+                    <option value="0-1500">Under ₹1500</option>
+                    <option value="1500-3000">₹1500 - ₹3000</option>
+                    <option value="3000-5000">₹3000 - ₹5000</option>
+                    <option value="5000+">Above ₹5000</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Color</label>
+                <select id="colorFilter">
+                    <option value="all">All</option>
+                    <option value="Black">Black</option>
+                    <option value="Navy Blue">Navy Blue</option>
+                    <option value="Coffee Brown">Coffee Brown</option>
+                    <option value="Army Green">Army Green</option>
+                    <option value="Beige">Beige</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Sort By</label>
+                <select id="sortFilter">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name A-Z</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🛍️ Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>✨ Our Premium Collection</h2>
+                <p>Handpicked designs from around the world</p>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Products will be loaded here dynamically from products.json -->
+                <div class="loading">Loading beautiful products... 🕌</div>
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn">Load More <i class="fas fa-arrow-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🏛️ Museum Gallery Section -->
+    <section id="museum" class="museum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🏛️ Burqa Museum Gallery</h2>
+                <p>Step into our heritage — witness the evolution of modest fashion</p>
+            </div>
+            <div class="museum-grid">
+                <div class="museum-card">
+                    <img src="https://via.placeholder.com/400x300?text=Vintage+Collection" alt="Vintage Burqa">
+                    <div class="museum-info">
+                        <h3>Vintage Collection (1950s)</h3>
+                        <p>Traditional hand-embroidered pieces</p>
+                    </div>
+                </div>
+                <div class="museum-card">
+                    <img src="https://via.placeholder.com/400x300?text=Turkish+Heritage" alt="Turkish Heritage">
+                    <div class="museum-info">
+                        <h3>Turkish Heritage</h3>
+                        <p>Ottoman inspired designs</p>
+                    </div>
+                </div>
+                <div class="museum-card">
+                    <img src="https://via.placeholder.com/400x300?text=Hyderabadi+Nizam" alt="Hyderabadi">
+                    <div class="museum-info">
+                        <h3>Hyderabadi Nizam</h3>
+                        <p>Royal Abaya collection</p>
+                    </div>
+                </div>
+                <div class="museum-card">
+                    <img src="https://via.placeholder.com/400x300?text=Modern+Art" alt="Modern Art">
+                    <div class="museum-info">
+                        <h3>Modern Art Series</h3>
+                        <p>Contemporary minimalist designs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ℹ️ About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About Modern Borka Museum</h2>
+                    <p>Founded in 2024, Modern Borka Museum is India's first hybrid concept store — combining a <strong>physical museum of burqa heritage</strong> with an <strong>online premium garment store</strong>.</p>
+                    <p>We believe modesty is not a limitation, it's an expression. Each burqa in our collection tells a story — from the royal courts of Hyderabad to the artisan workshops of Istanbul.</p>
+                    <div class="about-features">
+                        <div><i class="fas fa-check-circle"></i> 100+ Exclusive Designs</div>
+                        <div><i class="fas fa-check-circle"></i> Premium Fabrics (Crepe, Linen, Georgette)</div>
+                        <div><i class="fas fa-check-circle"></i> Custom Sizing Available</div>
+                        <div><i class="fas fa-check-circle"></i> Pan India Shipping</div>
+                    </div>
+                    <a href="#contact" class="btn-primary">Visit Our Offline Museum</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/500x400?text=Our+Store" alt="Our Store">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📞 Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>📞 Get in Touch</h2>
+                <p>Visit our store or connect with us online</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Our Store</h3>
+                        <p>[Your Full Store Address Here]<br>City, State - Pin Code</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Call Us</h3>
+                        <p>+91 7047158214</p>
+                        <p>10 AM - 8 PM (Fri closed)</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p>+91 7047158214</p>
+                        <p>Order & Inquiry</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>mbm.pvt.ltd.official@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Phone Number">
+                        <textarea rows="4" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 📱 Floating WhatsApp Button -->
+    <a href="https://wa.me/917047158214" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span>Chat with us!</span>
+    </a>
+
+    <!-- 🔼 Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 📧 Newsletter Popup (Shows after 10 seconds) -->
+    <div id="newsletterPopup" class="newsletter-popup">
+        <div class="popup-content">
+            <i class="fas fa-times close-popup" id="closePopup"></i>
+            <i class="fas fa-gift popup-icon"></i>
+            <h3>Get 10% OFF!</h3>
+            <p>Subscribe to get exclusive offers & new collection updates</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <small>No spam, unsubscribe anytime</small>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>🕌 Modern Borka Museum</h3>
+                    <p>India's first hybrid concept store combining a museum of burqa heritage with premium modest fashion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#museum">Museum</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Policies</h3>
+                    <ul>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Return & Exchange</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Get latest offers & new arrivals</p>
+                    <form id="footerNewsletter">
+                        <input type="email" placeholder="Your email">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Modern Borka Museum. All rights reserved. | Designed with <i class="fas fa-heart"></i> for modest fashion</p>
+                <p>📍 Offline Store: [Your Complete Address] | 📞 +91 7047158214</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
